@@ -13,7 +13,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: airbyte
-        namespace: default
+        namespace: airbyte
       interval: 1m
   # values:
   #   global:
