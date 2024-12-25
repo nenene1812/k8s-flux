@@ -15,41 +15,25 @@ spec:
         name: airbyte
         namespace: airbyte
       interval: 1m
-  # values:
-  #   global:
-  #     jobs:
-  #       kube:
-  #         images:
-  #           busybox: busybox:1.35
-  #           curl: curlimages/curl:7.83.1
-  #           socat: alpine/socat:1.7.4.3-r0
-  #   webapp:
-  #     ingress:
-  #       enabled: true
-  #       className: nginx
-  #   worker:
-  #     resources:
-  #       requests:
-  #         cpu: 100m
-  #         memory: 2500Mi
-  #       limits:
-  #         cpu: 2048m
-  #         memory: 40960Mi
-  #     containerOrchestrator:
-  #       image: airbyte/container-orchestrator:0.52.0
-  #   workload-launcher:
-  #     containerOrchestrator:
-  #       image: airbyte/container-orchestrator:0.52.0
-  #   server:
-  #     tolerations:
-  #       - key: kubernetes.azure.com/scalesetpriority
-  #         operator: Equal
-  #         value: spot
-  #         effect: NoSchedule
-  #     resources:
-  #       requests:
-  #         cpu: 100m
-  #         memory: 2500Mi
-  #       limits:
-  #         cpu: 1500m
-  #         memory: 20480Mi
+  values:
+    global:
+      jobs:
+        kube:
+          images:
+            busybox: busybox:1.35
+            curl: curlimages/curl:7.83.1
+            socat: alpine/socat:1.7.4.3-r0
+
+    worker:
+      resources:
+        requests:
+          cpu: 100m
+          memory: 2500Mi
+        limits:
+          cpu: 2048m
+          memory: 40960Mi
+      containerOrchestrator:
+        image: airbyte/container-orchestrator:0.52.0
+    workload-launcher:
+      containerOrchestrator:
+        image: airbyte/container-orchestrator:0.52.0
