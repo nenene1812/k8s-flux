@@ -1,5 +1,0 @@
-# create a namespace for the nginx deployment
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: nginx
